@@ -1,0 +1,23 @@
+package locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Class2 {
+
+	public static void main(String[] args) throws InterruptedException {
+		//to intialilize the browser
+		System.setProperty("webdriver.chrome.driver","./Drivers\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		driver.manage().window().maximize();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("html/body/div/div/div/div/div/div[2]/div[2]/form/div/div/div[2]/input")).sendKeys("Admin");
+		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div[2]/div[2]/form/div[2]/div/div[2]/input")).sendKeys("admin123");
+		driver.findElement(By.xpath("html/body/div/div/div/div/div/div[2]/div[2]/form/div[3]/button")).click();
+		
+
+	}
+
+}
